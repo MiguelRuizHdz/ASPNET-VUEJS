@@ -11,8 +11,9 @@
     <section id="app" class="hero is-fullheight">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">Hero title</h1>
-                <h2 class="subtitle">Hero subtitle</h2>
+                <h1 class="title">{{ company.releaseDate }} {{  company.name }}</h1>
+                <h2 class="subtitle">{{ company.description }}</h2>
+                <p><b>EICHDIZI status:</b> {{ company.published }}</p>
             </div>
         </div>
     </section>
@@ -20,7 +21,15 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script>
         const app = new Vue({
-            el: '#app'
+            el: '#app',
+            data: {
+                company: {
+                    name: 'EICHDIZI',
+                    description: 'Despegamos tu idea hasta el éxito',
+                    releaseDate: 2022,
+                    published: true
+                }
+            }
         });
         console.log(app);
     </script>
