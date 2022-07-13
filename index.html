@@ -28,7 +28,10 @@
                     <tr v-for="item in courses">
                         <td>{{ item.name }}</td>
                         <td>US${{ item.price }}</td>
-                        <td>{{ item.published ? 'Publicado' : 'Sin publicar' }}</td>
+                        <td>
+                            <span v-if="item.published" class="tag is-primary">Publicado</span>
+                            <span v-else class="tag is-danger">Sin publicar</span>
+                        </td>
                     </tr>
                 </tbody>
             </table>
