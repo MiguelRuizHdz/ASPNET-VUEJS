@@ -15,6 +15,23 @@
                 <h2 class="subtitle">{{ company.description }}</h2>
                 <p><b>EICHDIZI status:</b> {{ company.published }}</p>
             </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Curso</th>
+                        <th style="width: 150px;">Precio</th>
+                        <th style="width: 150px;">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in courses">
+                        <td>{{ item.name }}</td>
+                        <td>US${{ item.price }}</td>
+                        <td>{{ item.published ? 'Publicado' : 'Sin publicar' }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
     
@@ -28,7 +45,14 @@
                     description: 'Despegamos tu idea hasta el éxito',
                     releaseDate: 2022,
                     published: true
-                }
+                },
+                courses: [
+                    { name: 'ASP.NET Core 3', price: 13.99, published: true },
+                    { name: 'VueJS', price: 13.99, published: true },
+                    { name: 'Entity Framework Core', price: 14.99, published: true },
+                    { name: 'JavaScript Developer', price: 12.99, published: true },
+                    { name: 'NodeJS', price: 15.99, published: false }
+                ]
             }
         });
         console.log(app);
